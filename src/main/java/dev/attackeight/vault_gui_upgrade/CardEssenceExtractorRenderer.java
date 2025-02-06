@@ -48,6 +48,15 @@ public class CardEssenceExtractorRenderer implements BlockEntityRenderer<CardEss
                 }
 
                 matrixStack.mulPose(Vector3f.YP.rotationDegrees((float) rot));
+                if (dir == Direction.WEST) {
+                    matrixStack.translate(0.7, 0.0, -0.8);
+                }
+                if (dir == Direction.EAST) {
+                    matrixStack.translate(0.8, 0.0, 0.7);
+                }
+                if (dir == Direction.SOUTH) {
+                    matrixStack.translate(1.45, 0.0, -0.1);
+                }
                 minecraft.getItemRenderer().render(toRender, ItemTransforms.TransformType.FIXED, true, matrixStack, buffer, combinedLight, combinedOverlay, bakedModel);
                 matrixStack.popPose();
                 matrixStack.popPose();
